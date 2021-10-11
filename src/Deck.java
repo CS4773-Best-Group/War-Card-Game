@@ -9,14 +9,9 @@ public class Deck {
         // then maybe have a function to shuffle the cards
         deck = null;
     }
-
-<<<<<<< HEAD
+    
     Card dealCards(Player p1, Player p2) {
         // TODO: split deck into 2 and deal two players
-=======
-    Card dealCard() {
-        // TODO: dequeue and return next card in the deck
->>>>>>> main
         return null;
     }
 
