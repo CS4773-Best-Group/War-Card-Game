@@ -1,51 +1,42 @@
 import java.util.Queue;
+import java.util.List;
 import java.util.LinkedList;
 import java.util.Collections;
 
 public class Deck {
-    Queue<Card> deck = new LinkedList<>();
+    List<Card> deck = new LinkedList<>();
 
     public Deck() {
-        // TODO: initialize a deck of shuffled cards
-        // in a function, you can iterate through the enum suit and rank values to get all 52 cards
         for(Suit s : Suit.values()) {
-            for (Rank e : Rank.values()) {
-                deck.add(new Card(r,s));
+            for (Rank r : Rank.values()) {
+                deck.add(new Card(s,r));
             }
         }
-        // then maybe have a function to shuffle the cards
-        shuffleDeck();
     }
 
     public void shuffleDeck() {
-        Collections.shuffle(this.deck);
+        Collections.shuffle(deck);
     }
 
     // TODO: not sure if we are sending in the correct information, returning a card for the hands or return a queue of cards
-    Card dealCards(Player p1, Player p2) {
+    public static<T> List[] dealCards(Player p1, Player p2) {
         // TODO: split deck into 2 and deal two players
-        Queue[] hands = new Queue[2];
+        // SOMETHING LIKE THIS
+        List<Card> p1Hand = new LinkedList();
+        List<Card> p2Hand = new LinkedList();
 
-        Queue p1=new Queue(26);
-        Queue p2=new Queue(26);
+        int size = deck.size();
 
-        while(!(deck.isEmpty()))
+        for (int i = 0; i < size; i++)
         {
-            int val=deck.dequeue();
-            //System.out.println(val);
-            if(val%2==0)
-            {
-                p1.enqueue(val);
-            }else
-            {
-                p2.enqueue(val);
+            if (i < (size + 1)/2) {
+                first.add(deck.get(i));
+            }
+            else {
+                second.add(deck.get(i));
             }
         }
-        // assign odd numbers queue to 0th index of array
-        hands[0] = p1;
-        // assign even numbers queue to 1th index of array
-        hands[1] = p2;
-        return hands;
+        return new List [] {p1Hand, p2Hand};
     }
 
     /**
