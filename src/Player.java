@@ -4,8 +4,12 @@ public class Player {
     Queue<Card> hand;
     int points;
 
-    public void addToHand() {
-        // TODO: add card to end of hand queue
+    public void addToHand(Card card) {
+        hand.add(card);
+    }
+
+    public void setHand(Queue<Card> hand) {
+        this.hand = hand;
     }
 
     public int getNumCardsInHand() {
