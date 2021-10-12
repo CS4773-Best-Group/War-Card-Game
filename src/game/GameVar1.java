@@ -1,6 +1,7 @@
 package game;
 
 import models.Card;
+import models.Deck;
 import models.Player;
 
 public class GameVar1 implements Game {
@@ -13,11 +14,13 @@ public class GameVar1 implements Game {
         this.player1 = player1;
         this.player2 = player2;
         this.maxTurns = maxTurns;
-        // deal cards to player 1 and 2
     }
 
     @Override
     public void startGame() {
+        Deck deck = new Deck();
+        deck.shuffleDeck();
+        deck.dealCards(player1, player2);
         while (!isGameDone()) {
             playTurn();
         }
