@@ -1,9 +1,13 @@
+package game;
+
+import models.Player;
+
 public interface Game {
     public void startGame();
     public void playTurn();
     public void declareWar();
-    public void isGameDone();
-    public void getWinner();
+    public boolean isGameDone();
+    public Player getWinner();
     public void setTurn(int turnNum);
-    public void getTurn();
+    public int getTurn();
 }
