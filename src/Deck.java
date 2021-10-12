@@ -22,11 +22,8 @@ public class Deck {
     // TODO: not sure if we are sending in the correct information, returning a card for the hands or return a queue of cards
     public void dealCards(Player p1, Player p2) {
         // TODO: split deck into 2 and deal two players
-        ArrayList<Card> p1Hand = new ArrayList<Card>();
-        ArrayList<Card> p2Hand = new ArrayList<Card>();
-
-        deck1.addAll(cardDeck.subList(0, 25));
-        deck2.addAll(cardDeck.subList(26, deck.size()));
+        p1.setHand.addAll(deck.subList(0, 25));
+        p2.setHand.addAll(deck.subList(26, deck.size()));
     }
 
     /**
