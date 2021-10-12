@@ -1,3 +1,7 @@
+package models;
+
+import models.Card;
+
 import java.util.Queue;
 
 public class Player {
