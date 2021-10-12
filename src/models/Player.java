@@ -24,6 +24,10 @@ public class Player {
         return hand.size();
     }
 
+    public void addPoints(int points) {
+        setPoints(getPoints() + points);
+    }
+
     public int getPoints() {
         return points;
     }
