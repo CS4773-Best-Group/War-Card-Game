@@ -1,15 +1,16 @@
 import java.util.Queue;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class Deck {
-    List<Card> deck = new LinkedList<>();
+    ArrayList<Card> deck = new ArrayList<>();
 
     public Deck() {
-        for(Suit s : Suit.values()) {
-            for (Rank r : Rank.values()) {
-                deck.add(new Card(s,r));
+        for(Suit suit : Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                deck.add(new Card(suit,rank));
             }
         }
     }
@@ -19,24 +20,13 @@ public class Deck {
     }
 
     // TODO: not sure if we are sending in the correct information, returning a card for the hands or return a queue of cards
-    public static<T> List[] dealCards(Player p1, Player p2) {
+    public void dealCards(Player p1, Player p2) {
         // TODO: split deck into 2 and deal two players
-        // SOMETHING LIKE THIS
-        List<Card> p1Hand = new LinkedList();
-        List<Card> p2Hand = new LinkedList();
+        ArrayList<Card> p1Hand = new ArrayList<Card>();
+        ArrayList<Card> p2Hand = new ArrayList<Card>();
 
-        int size = deck.size();
-
-        for (int i = 0; i < size; i++)
-        {
-            if (i < (size + 1)/2) {
-                first.add(deck.get(i));
-            }
-            else {
-                second.add(deck.get(i));
-            }
-        }
-        return new List [] {p1Hand, p2Hand};
+        deck1.addAll(cardDeck.subList(0, 25));
+        deck2.addAll(cardDeck.subList(26, deck.size()));
     }
 
     /**
