@@ -13,7 +13,7 @@ public class Player {
     }
 
     public Card playHand(){
-        return hand.pop();
+        return hand.remove();
     }
 
     public void setHand(Queue<Card> hand) {
