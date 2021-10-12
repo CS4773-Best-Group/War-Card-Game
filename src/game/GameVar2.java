@@ -1,5 +1,4 @@
 package game;// IMPORTANT NOTE: THIS CLASS MAY NEED TO GET BROKEN UP DEPENDING ON SIZE OF FILE
-
 import models.Deck;
 import models.Player;
 
@@ -12,16 +11,28 @@ public class GameVar2 implements Game {
     public GameVar2(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
+        //deck split
+
     }
 
     @Override
     public void startGame() {
         // TODO
+        while (!isGameDone()){
+            playTurn();
+        }
     }
 
     @Override
     public void playTurn() {
         // TODO
+        
+
+    }
+
+    @Override
+    public void playHand(){
+        //TODO
     }
 
     @Override
@@ -32,6 +43,7 @@ public class GameVar2 implements Game {
     @Override
     public boolean isGameDone() {
         // TODO
+        if (deck.)
         return false;
     }
 
