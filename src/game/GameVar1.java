@@ -60,12 +60,11 @@ public class GameVar1 implements Game {
 
     @Override
     public void setTurn(int turnNum) {
-        // TODO
+        this.turn = turnNum;
     }
 
     @Override
     public int getTurn() {
-        // TODO
-        return 0;
+        return turn;
     }
 }
