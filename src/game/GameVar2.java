@@ -1,7 +1,7 @@
 package game;// IMPORTANT NOTE: THIS CLASS MAY NEED TO GET BROKEN UP DEPENDING ON SIZE OF FILE
 import models.Deck;
 import models.Player;
-
+import models.Card;
 public class GameVar2 implements Game {
     Player player1;
     Player player2;
@@ -26,24 +26,34 @@ public class GameVar2 implements Game {
     @Override
     public void playTurn() {
         // TODO
-        
+        Card card1 = player1.playHand();
+        Card card2 = player2.playHand();
+        if(card1.getRank() == card2.getRank()){
+            declareWar(card1, card2);
+        } else if (card1.getRank().compareTo(card2.getRank()) > 0){
+            player1.addPoints(2);
+        } else {
+            player2.addPoints(2);
+        }
+
 
     }
 
     @Override
-    public void playHand(){
-        //TODO
-    }
-
-    @Override
-    public void declareWar() {
+    public void declareWar(Card card1, Card card2) {
         // TODO
+
+        if (card1.getRank().compareTo(card2.getRank()) > 0){
+            player1.addPoints(6);
+        } else {
+            player2.addPoints(6);
+        }
     }
 
     @Override
     public boolean isGameDone() {
         // TODO
-        if (deck.)
+
         return false;
     }
 
