@@ -8,6 +8,10 @@ public class Player {
         hand.add(card);
     }
 
+    public Card playHand(){
+        return hand.pop();
+    }
+
     public void setHand(Queue<Card> hand) {
         this.hand = hand;
     }
