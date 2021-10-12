@@ -27,17 +27,17 @@ public class GameVar1 implements Game {
     }
 
     @Override
-    public void isGameDone() {
+    public boolean isGameDone() {
         // TODO
     }
 
     @Override
-    public void getWinner() {
+    public Player getWinner() {
         // TODO
     }
 
     @Override
-    public void setTurn(int turnNum) {
+    public int setTurn(int turnNum) {
         // TODO
     }
 

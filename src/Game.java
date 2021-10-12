@@ -3,7 +3,7 @@ public interface Game {
     public void playTurn();
     public void declareWar();
     public boolean isGameDone();
-    public player getWinner();
+    public Player getWinner();
     public void setTurn(int turnNum);
     public int getTurn();
 }

@@ -27,12 +27,12 @@ public class GameVar2 implements Game {
     }
 
     @Override
-    public void isGameDone() {
+    public boolean isGameDone() {
         // TODO
     }
 
     @Override
-    public void getWinner() {
+    public Player getWinner() {
         // TODO
     }
 
@@ -42,7 +42,7 @@ public class GameVar2 implements Game {
     }
 
     @Override
-    public void getTurn() {
+    public int getTurn() {
         // TODO
     }
 }
