@@ -4,11 +4,14 @@ import models.Card;
 import models.Deck;
 import models.Player;
 
+
+
 public class GameVar1 implements Game {
     Player player1;
     Player player2;
     int turn;
     int maxTurns;
+    private static final int TOTAL_NUM_CARDS = 52;
 
     public GameVar1(Player player1, Player player2, int maxTurns) {
         this.player1 = player1;
@@ -52,7 +55,19 @@ public class GameVar1 implements Game {
     @Override
     public boolean isGameDone() {
         // TODO
-        return false;
+        //a) one player has won all of the cards
+        if((player1.getNumCardsInHand() == TOTAL_NUM_CARDS) || (player2.getNumCardsInHand() == TOTAL_NUM_CARDS)) {
+            return true;
+        }
+        // 2) a predetermined number of rounds has been played.
+        // The winner is the player with the most cards at the end of the game.
+        else if(turn == maxTurns) {
+            return true;
+        }
+        else {
+
+            return false;
+        }
     }
 
     @Override
@@ -70,4 +85,5 @@ public class GameVar1 implements Game {
     public int getTurn() {
         return turn;
     }
+
 }
