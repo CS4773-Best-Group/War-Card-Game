@@ -35,7 +35,7 @@ public class GameVar1 implements Game {
         Card card2 = player2.playHand();
 
         if (card1.getRank() == card2.getRank()) {
-            declareWar(card1, card2);
+            declareWar();
         } else if (card1.getRank().compareTo(card2.getRank()) > 0) { // player 1 wins
             player1.addToHand(card1);
             player1.addToHand(card2);
@@ -48,20 +48,20 @@ public class GameVar1 implements Game {
     }
 
     @Override
-    public void declareWar(Card card1, Card card2) {
-        int totPoints = 6;
-        while(card1.getRank() == card2.getRank()){
-            totPoints = totPoints + 4;
-        }
-        if(card1.getRank().compareTo(card2.getRank()) > 0){
-            player1.addToHand(card1);
-            player1.addToHand(card2);
-            player1.addPoints(totPoints);
-        } else {
-            player2.addToHand(card1);
-            player2.addToHand(card2);
-            player2.addPoints(totPoints);
-        }
+    public void declareWar() {
+//        int totPoints = 6;
+//        while(card1.getRank() == card2.getRank()){
+//            totPoints = totPoints + 4;
+//        }
+//        if(card1.getRank().compareTo(card2.getRank()) > 0){
+//            player1.addToHand(card1);
+//            player1.addToHand(card2);
+//            player1.addPoints(totPoints);
+//        } else {
+//            player2.addToHand(card1);
+//            player2.addToHand(card2);
+//            player2.addPoints(totPoints);
+//        }
     }
 
     @Override

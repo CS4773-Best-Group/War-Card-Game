@@ -1,10 +1,9 @@
 package models;
 
-import java.util.Queue;
-import java.util.List;
-import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Deck {
     ArrayList<Card> deck = new ArrayList<>();
@@ -24,10 +23,8 @@ public class Deck {
     // TODO: not sure if we are sending in the correct information, returning a card for the hands or return a queue of cards
     public void dealCards(Player p1, Player p2) {
         // TODO: split deck into 2 and deal two players
-        Queue<Card> p1Hand = null;
-        Queue<Card> p2Hand = null;
-        p1Hand.addAll(deck.subList(0, 25));
-        p2Hand.addAll(deck.subList(26, deck.size()));
+        Queue<Card> p1Hand = new LinkedList<>(deck.subList(0, 26));
+        Queue<Card> p2Hand = new LinkedList<>(deck.subList(26, deck.size()));
         p1.setHand(p1Hand);
         p2.setHand(p2Hand);
     }

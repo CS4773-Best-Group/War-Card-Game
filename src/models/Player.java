@@ -1,12 +1,16 @@
 package models;
 
-import models.Card;
-
 import java.util.Queue;
 
 public class Player {
     Queue<Card> hand;
+    int playerNum;
     int points;
+
+    public Player(int playerNum) {
+        this.playerNum = playerNum;
+        points = 0;
+    }
 
     public void addToHand(Card card) {
         hand.add(card);
@@ -22,6 +26,10 @@ public class Player {
 
     public int getNumCardsInHand() {
         return hand.size();
+    }
+
+    public int getPlayerNum() {
+        return playerNum;
     }
 
     public void addPoints(int points) {
