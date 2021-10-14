@@ -35,7 +35,7 @@ public class GameVar1 implements Game {
         Card card2 = player2.playHand();
 
         if (card1.getRank() == card2.getRank()) {
-            declareWar();
+            declareWar(card1, card2);
         } else if (card1.getRank().compareTo(card2.getRank()) > 0) { // player 1 wins
             player1.addToHand(card1);
             player1.addToHand(card2);
@@ -48,32 +48,44 @@ public class GameVar1 implements Game {
     }
 
     @Override
-    public void declareWar() {
-        // TODO
+    public void declareWar(Card card1, Card card2) {
+        int totPoints = 6;
+        while(card1.getRank() == card2.getRank()){
+            totPoints = totPoints + 4;
+        }
+        if(card1.getRank().compareTo(card2.getRank()) > 0){
+            player1.addToHand(card1);
+            player1.addToHand(card2);
+            player1.addPoints(totPoints);
+        } else {
+            player2.addToHand(card1);
+            player2.addToHand(card2);
+            player2.addPoints(totPoints);
+        }
     }
 
     @Override
     public boolean isGameDone() {
-        // TODO
         //a) one player has won all of the cards
         if((player1.getNumCardsInHand() == TOTAL_NUM_CARDS) || (player2.getNumCardsInHand() == TOTAL_NUM_CARDS)) {
             return true;
         }
-        // 2) a predetermined number of rounds has been played.
-        // The winner is the player with the most cards at the end of the game.
+        // 2) a predetermined number of rounds has been played. The winner is the player with the most cards at the end of the game.
         else if(turn == maxTurns) {
             return true;
         }
         else {
-
             return false;
         }
     }
 
     @Override
     public Player getWinner() {
-        // TODO
-        return null;
+        if(player1.getPoints() > player2.getPoints()){
+            return player1;
+        } else {
+            return player2;
+        }
     }
 
     @Override
