@@ -8,6 +8,4 @@ public interface Game {
     public void declareWar();
     public boolean isGameDone();
     public Player getWinner();
-    public void setTurn(int turnNum);
-    public int getTurn();
 }
