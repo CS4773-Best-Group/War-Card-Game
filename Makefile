@@ -6,7 +6,7 @@ CP := classes
 all: build_jar clean
 
 build_jar: models game main
-	jar -cfv hw2.jar $(CP)
+	cd $(CP); jar -cfv ../hw2.jar *;
 
 models: $(MODELS)
 	javac -sourcepath src -d $(CP) $(MODELS)/*.java
