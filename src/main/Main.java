@@ -7,8 +7,15 @@ import models.Player;
 
 public class Main {
     public static void main(String[] args) {
-        // TODO: create and run game based on args
-        Game game = new GameVar1(new Player(1), new Player(2), 1000);
+        int gameVariation = Integer.parseInt(args[0]);
+        int maxRounds = Integer.parseInt(args[1]);
+        Game game;
+        if (gameVariation == 1){
+            game = new GameVar1(new Player(1), new Player(2), maxRounds);
+        }
+        else {
+            game = new GameVar2(new Player(1), new Player(2));
+        }
         game.startGame();
     }
 }
