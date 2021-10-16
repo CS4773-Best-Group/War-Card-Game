@@ -6,7 +6,6 @@ import models.Player;
 
 import java.util.ArrayList;
 
-
 public class GameVar1 implements Game {
     Player player1;
     Player player2;
@@ -19,7 +18,7 @@ public class GameVar1 implements Game {
         this.player1 = player1;
         this.player2 = player2;
         this.maxTurns = maxTurns;
-        winPile = new ArrayList<Card>();
+        winPile = new ArrayList<>();
         deck = new Deck();
         deck.shuffleDeck();
         deck.dealCards(player1, player2);
@@ -105,5 +104,4 @@ public class GameVar1 implements Game {
     public int getTurn() {
         return turn;
     }
-
 }

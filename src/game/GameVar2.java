@@ -68,10 +68,7 @@ public class GameVar2 implements Game {
 
     @Override
     public boolean isGameDone() {
-        if (player1.getNumCardsInHand() == 0) {
-            return true;
-        }
-        return false;
+        return player1.getNumCardsInHand() == 0;
     }
 
     @Override
