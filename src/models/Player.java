@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Queue;
 
 public class Player {
@@ -12,8 +13,8 @@ public class Player {
         points = 0;
     }
 
-    public void addToHand(Card card) {
-        hand.add(card);
+    public void addToHand(ArrayList<Card> cards) {
+        hand.addAll(cards);
     }
 
     public Card playHand(){
