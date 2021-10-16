@@ -26,8 +26,9 @@ public class GameVar2 implements Game {
         }
         if (getWinner() == null) {
             System.out.println("Game has ended in a TIE!");
+        } else {
+            System.out.println("Player " + getWinner().getPlayerNum() + " WINS the game!!!");
         }
-        System.out.println("Player " + getWinner().getPlayerNum() + " WINS the game!!!");
     }
 
     @Override
