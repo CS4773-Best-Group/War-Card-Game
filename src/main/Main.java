@@ -8,9 +8,9 @@ import models.Player;
 public class Main {
     public static void main(String[] args) {
         int gameVariation = Integer.parseInt(args[0]);
-        int maxRounds = Integer.parseInt(args[1]);
         Game game;
         if (gameVariation == 1){
+            int maxRounds = Integer.parseInt(args[1]);
             game = new GameVar1(new Player(1), new Player(2), maxRounds);
         }
         else {
